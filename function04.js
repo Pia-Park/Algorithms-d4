@@ -7,19 +7,18 @@
 // and return the value.  (35.6, ‘c’)
 
 
-const convertCtoF = function(celsius){
-    let cTemp = celsius;
-    let cToF = cTemp * 9 / 5 + 32;
-    let result = (cToF.toFixed(2)) + ", 'f'";
-    return result;
+const convertCtoF = function(degree, cf){
+    let result = 0;
+
+    if(cf === 'c'){
+        result = degree * 9 / 5 + 32;
+        return(result.toFixed(2));
+    } else if(cf === 'f'){
+        result = (degree - 32) * 5 / 9;
+        return(result.toFixed(2));
+    }
+    
 };
 
-const convertFtoC = function(fahrenheit){
-    let fTemp = fahrenheit;
-    let fToC = (fTemp - 32) * 5 / 9;
-    let result = (fToC.toFixed(2)) + ", 'c'";
-    return result;
-};
 
-console.log(convertCtoF(60));
-console.log(convertFtoC(60));
+console.log(convertCtoF(35.6, 'c'));
